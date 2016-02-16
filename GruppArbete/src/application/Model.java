@@ -1,6 +1,8 @@
 package application;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public enum Model {
 	MODEL;
@@ -12,9 +14,9 @@ public enum Model {
 			// connection =
 			// DriverManager.getConnection("auktion.clgxeckvrykx.eu-central-1.rds.amazonaws.com:3306",
 			// "root", "rootroot");
-			String url = "jdbc:mysql://localhost:auktion:3306/";
+			String url = "jdbc:mysql://auktion.clgxeckvrykx.eu-central-1.rds.amazonaws.com:3306/";
 			String userName = "root";
-			String password = "";
+			String password = "rootroot";
 			String dbName = "auktion";
 			String driver = "com.mysql.jdbc.Driver";
 			connection = DriverManager.getConnection(url + dbName, userName, password);
