@@ -1,14 +1,19 @@
-package Table;
+package application;
 
 
 public class Levrantör {
-	int leveransörId;
+	String leveransörId;
 	String namn;
 	String epost;
 	String telefon;
 	String gatuadress;
 	String ort;
 	float provisionsniva;
+	@Override
+	public String toString() {
+		return namn;
+	}
 	
-
+	
+	
 }

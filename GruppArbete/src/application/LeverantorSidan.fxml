@@ -6,24 +6,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="564.0" prefWidth="729.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="application.LeverantorSidanController">
+<AnchorPane prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LeverantorSidanController">
    <children>
       <Label layoutX="297.0" layoutY="40.0" text="Leverantör">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
       </Label>
-      <TableView layoutX="388.0" layoutY="131.0" prefHeight="365.0" prefWidth="311.0">
+      <TableView fx:id="tableVie" layoutX="43.0" layoutY="214.0" prefHeight="282.0" prefWidth="656.0" style="-fx-background-color: orange;">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="namnCol" prefWidth="139.0" text="Namn" />
+          <TableColumn fx:id="beskrivningCol" prefWidth="152.0" text="Beskrivning" />
+            <TableColumn fx:id="auktionCol" minWidth="8.0" prefWidth="65.0" text="AuktionId" />
+            <TableColumn fx:id="slutCol" minWidth="0.0" prefWidth="294.0" text="SlutTid" />
         </columns>
       </TableView>
-      <Label layoutX="504.0" layoutY="102.0" text="Dina Auktioner" />
-      <Button fx:id="button" layoutX="46.0" layoutY="131.0" mnemonicParsing="false" text="Lägg till Produkt" />
-      <Button layoutX="226.0" layoutY="131.0" mnemonicParsing="false" text="Lägg till Auktion" />
+      <Label layoutX="325.0" layoutY="185.0" text="Dina Auktioner" />
+      <Button fx:id="button" layoutX="103.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Produkt" />
+      <Button layoutX="524.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Auktion" />
    </children>
 </AnchorPane>

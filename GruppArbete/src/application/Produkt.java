@@ -1,4 +1,4 @@
-package Table;
+package application;
 
 
 public class Produkt {

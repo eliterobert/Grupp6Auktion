@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LeverantorLoginController">
+<AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LeverantorLoginController">
    <children>
       <ComboBox fx:id="comboBox" layoutX="21.0" layoutY="69.0" prefWidth="150.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="21.0" layoutY="115.0" promptText="Password" />

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -17,19 +18,25 @@ public class RegistreraProduktController implements Initializable {
 	@FXML
 	TextField namnField, utgangField, beskrivningField;
 	@FXML
-	ComboBox<String> comboBox;
+	ComboBox<Kategori> comboBox;
 	@FXML
 	Button button;
+
+	private ArrayList<Kategori> produktLista = new ArrayList<>();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT kategoriId FROM kategori");
+			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT * FROM kategori");
 			ResultSet rs = preparedStatement.executeQuery();
 			while (rs.next()) {
-				comboBox.getItems().add(rs.getString(1));
+				Kategori kat = new Kategori();
+				kat.kategoriId = rs.getString("kategoriId");
+				kat.namn = rs.getString("namn");
+				produktLista.add(kat);
+				comboBox.getItems().add(kat);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -40,7 +47,7 @@ public class RegistreraProduktController implements Initializable {
 						"INSERT INTO produkt (Namn, Beskrivning , kategoriId,leverantörId) VALUES (?,?,?,?)");
 				pS.setString(1, namnField.getText());
 				pS.setString(2, beskrivningField.getText());
-				pS.setString(3, comboBox.getValue());
+				pS.setString(3, comboBox.getValue().kategoriId);
 				pS.setString(4, LeverantorLoginController.test);
 				pS.executeUpdate();
 				System.out.println("Produkt inlagd");

@@ -1,5 +1,4 @@
-package Table;
-
+package application;
 
 public class Kund {
 	String personnummer;
@@ -10,4 +9,8 @@ public class Kund {
 	String telefon;
 	String epost;
 
+	@Override
+	public String toString() {
+		return förnamn + " " + efternamn;
+	}
 }
