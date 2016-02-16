@@ -19,11 +19,17 @@ public class LoginController implements Initializable {
 		// TODO Auto-generated method stub
 
 		kundLoginButton.setOnAction(e -> {
-			main.logIn("UserLogin");
+			main.logIn("UserLogin", 270, 150);
 		});
-		leverantorLoginButton.setOnAction(e-> {
-			main.logIn("LeverantorLogin");
-			
+		leverantorLoginButton.setOnAction(e -> {
+			main.logIn("LeverantorLogin", 270, 150);
+		});
+		registreraLevButton.setOnAction(e -> {
+			main.logIn("RegistreraLeverantor", 400, 300);
+		});
+		registreraKundButton.setOnAction(e -> {
+			main.logIn("RegistreraKund", 400, 350);
+
 		});
 
 	}

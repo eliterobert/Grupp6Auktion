@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="322.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistreraKund">
+   <children>
+      <Label layoutX="119.0" layoutY="27.0" text="Lägg till Kund">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="personnummerField" layoutX="37.0" layoutY="78.0" promptText="Personnummer" />
+      <TextField fx:id="efternamnField" layoutX="214.0" layoutY="78.0" promptText="Efternamn" />
+      <TextField fx:id="fornamnField" layoutX="37.0" layoutY="118.0" promptText="Förnamn" />
+      <TextField fx:id="adressField" layoutX="214.0" layoutY="118.0" promptText="Adress" />
+      <TextField fx:id="postnummerField" layoutX="37.0" layoutY="160.0" promptText="Postnummer" />
+      <TextField fx:id="ortField" layoutX="214.0" layoutY="160.0" promptText="Ort" />
+      <Button fx:id="button" layoutX="165.0" layoutY="282.0" mnemonicParsing="false" text="Registrera" />
+      <TextField fx:id="nummerField" layoutX="37.0" layoutY="199.0" promptText="Telefonnummer" />
+      <TextField fx:id="epostField" layoutX="214.0" layoutY="199.0" promptText="Epost" />
+   </children>
+</AnchorPane>

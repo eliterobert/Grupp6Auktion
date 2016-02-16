@@ -15,7 +15,7 @@ public class Main extends Application {
 	FXMLLoader loader;
 	Parent root;
 	Scene scene, gameScene;
-	public static Stage startStage;
+	public static Stage startStage, stage1;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -33,13 +33,13 @@ public class Main extends Application {
 		}
 	}
 
-	public void logIn(String pathName) {
-		Stage stage1 = new Stage();
+	public void logIn(String pathName, int height, int width) {
+		stage1 = new Stage();
 		try {
-			location = this.getClass().getResource(pathName+".fxml");
+			location = this.getClass().getResource(pathName + ".fxml");
 			loader = new FXMLLoader(location);
 			root = loader.load();
-			scene = new Scene(root, 270, 150);
+			scene = new Scene(root, height, width);
 			stage1.setScene(scene);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage1.show();
