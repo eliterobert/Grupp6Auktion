@@ -6,19 +6,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="application.LoginController">
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <Label layoutX="172.0" layoutY="27.0" text="Login">
+      <Label layoutX="135.0" layoutY="14.0" text="NackAuktion">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="kundLoginButton" layoutX="58.0" layoutY="61.0" mnemonicParsing="false" text="Kund" />
-      <Button fx:id="leverantorLoginButton" layoutX="274.0" layoutY="61.0" mnemonicParsing="false" text="Leverantör" />
+      <Button fx:id="kundLoginButton" layoutX="59.0" layoutY="88.0" mnemonicParsing="false" text="Kund" />
+      <Button fx:id="leverantorLoginButton" layoutX="276.0" layoutY="86.0" mnemonicParsing="false" text="Leverantör" />
       <Button fx:id="registreraKundButton" layoutX="30.0" layoutY="149.0" mnemonicParsing="false" text="Registrera Kund" />
       <Label layoutX="53.0" layoutY="121.0" text="Inte kund?" />
-      <Label layoutX="274.0" layoutY="125.0" text="Inte Leverantör?" />
-      <Button fx:id="registreraLevButton" layoutX="253.0" layoutY="150.0" mnemonicParsing="false" text="Registrera Leverantör" />
+      <Label layoutX="275.0" layoutY="121.0" text="Inte Leverantör?" />
+      <Button fx:id="registreraLevButton" layoutX="254.0" layoutY="149.0" mnemonicParsing="false" text="Registrera Leverantör" />
+      <Label layoutX="40.0" layoutY="58.0" text="Logga in som : " />
+      <Label layoutX="274.0" layoutY="58.0" prefHeight="17.0" prefWidth="86.0" text="Logga in som : " />
    </children>
 </AnchorPane>

@@ -20,6 +20,5 @@
       <TextField fx:id="postnummerField" layoutX="31.0" layoutY="188.0" promptText="Postnummer" />
       <TextField fx:id="ortField" layoutX="208.0" layoutY="188.0" promptText="Ort" />
       <Button fx:id="button" layoutX="166.0" layoutY="252.0" mnemonicParsing="false" text="Registrera" />
-      <Button fx:id="closeButton" layoutX="315.0" layoutY="252.0" mnemonicParsing="false" text="Close" />
    </children>
 </AnchorPane>

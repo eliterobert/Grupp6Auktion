@@ -13,27 +13,35 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LeverantorLoginController2 implements Initializable {
+public class LeverantorLoginController implements Initializable {
 
 	@FXML
 	Button loginButton;
 	@FXML
 	ComboBox<String> comboBox;
+	
+	public static String test;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		PreparedStatement preparedStatement = null;
 
+		
+		
+		loginButton.setOnAction(e -> {
+			test = comboBox.getValue();
+			Main.stage1.close();
+			Model.MODEL.main.logIn("LeverantorSidan", 730, 560);
+
+		});
+		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT epost FROM leverantör");
+			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT leverantörId FROM leverantör");
 			ResultSet rs = preparedStatement.executeQuery();
 			while (rs.next()) {
 				comboBox.getItems().add(rs.getString(1));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		}
 
 	}

@@ -15,7 +15,7 @@ public class Main extends Application {
 	FXMLLoader loader;
 	Parent root;
 	Scene scene, gameScene;
-	public static Stage startStage, stage1;
+	public static Stage startStage, stage1, stage2;
 
 	@Override
 	public void start(Stage primaryStage) {

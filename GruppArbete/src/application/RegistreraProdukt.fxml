@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="225.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistreraProduktController">
+   <children>
+      <Label layoutX="102.0" layoutY="24.0" text="Lägg till Produkt">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="namnField" layoutX="37.0" layoutY="78.0" promptText="Namn" />
+      <TextField fx:id="beskrivningField" layoutX="214.0" layoutY="78.0" promptText="Beskrivning" />
+      <TextField fx:id="utgangsField" layoutX="37.0" layoutY="118.0" promptText="Utgångspris" />
+      <Button fx:id="button" layoutX="165.0" layoutY="180.0" mnemonicParsing="false" text="Registrera" />
+      <ComboBox fx:id="comboBox" layoutX="214.0" layoutY="118.0" prefWidth="150.0" promptText="Kategori" />
+   </children>
+</AnchorPane>
