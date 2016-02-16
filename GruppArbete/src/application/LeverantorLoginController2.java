@@ -1,6 +1,9 @@
 package application;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -12,20 +15,27 @@ import javafx.scene.control.TextField;
 
 public class LeverantorLoginController2 implements Initializable {
 
-	
 	@FXML
 	Button loginButton;
 	@FXML
-	PasswordField passwordField;
-	@FXML 
-	public static ComboBox<String> comboBox;
+	ComboBox<String> comboBox;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		PreparedStatement preparedStatement = null;
 
-		
-		
-		
+		try {
+			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT epost FROM leverantör");
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				comboBox.getItems().add(rs.getString(1));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+
 	}
 
 }

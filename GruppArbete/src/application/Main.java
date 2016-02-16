@@ -33,29 +33,16 @@ public class Main extends Application {
 		}
 	}
 
-	public void logIn() {
+	public void logIn(String pathName) {
 		Stage stage1 = new Stage();
 		try {
-			location = this.getClass().getResource("UserLogin.fxml");
+			location = this.getClass().getResource(pathName+".fxml");
 			loader = new FXMLLoader(location);
 			root = loader.load();
 			scene = new Scene(root, 270, 150);
 			stage1.setScene(scene);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage1.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void loadMaze(String mazeName) {
-		try {
-			location = this.getClass().getResource(mazeName + ".fxml");
-			loader = new FXMLLoader(location);
-			root = loader.load();
-			scene = new Scene(root, 400, 400);
-			startStage.setScene(scene);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
