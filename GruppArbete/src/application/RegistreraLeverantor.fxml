@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistreraLeverantor">
+   <children>
+      <Label layoutX="86.0" layoutY="28.0" text="Lägg till Leverantör">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="namnField" layoutX="31.0" layoutY="106.0" promptText="Företagsnamn" />
+      <TextField fx:id="epostField" layoutX="208.0" layoutY="106.0" promptText="Epost" />
+      <TextField fx:id="nummerField" layoutX="31.0" layoutY="146.0" promptText="Telefonnummer" />
+      <TextField fx:id="adressField" layoutX="208.0" layoutY="146.0" promptText="Adress" />
+      <TextField fx:id="postnummerField" layoutX="31.0" layoutY="188.0" promptText="Postnummer" />
+      <TextField fx:id="ortField" layoutX="208.0" layoutY="188.0" promptText="Ort" />
+      <Button fx:id="button" layoutX="166.0" layoutY="252.0" mnemonicParsing="false" text="Registrera" />
+      <Button fx:id="closeButton" layoutX="315.0" layoutY="252.0" mnemonicParsing="false" text="Close" />
+   </children>
+</AnchorPane>

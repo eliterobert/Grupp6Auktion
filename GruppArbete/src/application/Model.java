@@ -9,16 +9,12 @@ public enum Model {
 	Main main = new Main();
 	public static Connection connection;
 
-	public static Connection getConnection() {
+	Connection getConnection() {
 		try {
-			// connection =
-			// DriverManager.getConnection("auktion.clgxeckvrykx.eu-central-1.rds.amazonaws.com:3306",
-			// "root", "rootroot");
 			String url = "jdbc:mysql://auktion.clgxeckvrykx.eu-central-1.rds.amazonaws.com:3306/";
 			String userName = "root";
 			String password = "rootroot";
 			String dbName = "auktion";
-			String driver = "com.mysql.jdbc.Driver";
 			connection = DriverManager.getConnection(url + dbName, userName, password);
 			if (connection != null) {
 				System.out.println("Connected");
