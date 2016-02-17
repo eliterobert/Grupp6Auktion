@@ -17,9 +17,10 @@
       <TableView layoutX="58.0" layoutY="221.0" prefHeight="209.0" prefWidth="482.0">
         <columns>
           <TableColumn fx:id="namnCol" prefWidth="75.0" text="Namn" />
-          <TableColumn fx:id="beskrivningCol" prefWidth="121.0" text="Beskrivning" />
-            <TableColumn fx:id="auktionCol" prefWidth="115.0" text="AuktionsId" />
-            <TableColumn fx:id="slutCol" prefWidth="184.0" text="SlutTid" />
+          <TableColumn fx:id="beskrivningCol" prefWidth="91.0" text="Beskrivning" />
+            <TableColumn fx:id="auktionCol" text="AuktionsId" />
+            <TableColumn fx:id="startCol" prefWidth="115.0" text="StartTid" />
+            <TableColumn fx:id="slutCol" prefWidth="75.0" text="SlutTid" />
         </columns>
       </TableView>
    </children>

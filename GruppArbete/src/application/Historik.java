@@ -6,6 +6,9 @@ public class Historik {
 	String beskrivning;
 	String auktionsId;
 	String auktionSlut;
+	String belopp;
+	String auktionStart;
+	
 
 	public String getNamn() {
 		return namn;
@@ -45,6 +48,18 @@ public class Historik {
 		this.beskrivning = beskrivning;
 		this.auktionsId = auktionsId;
 		this.auktionSlut = auktionSlut;
+	}
+	
+
+	
+
+	public Historik(String namn, String beskrivning, String auktionSlut, String belopp, String auktionStart) {
+		super();
+		this.namn = namn;
+		this.beskrivning = beskrivning;
+		this.auktionSlut = auktionSlut;
+		this.belopp = belopp;
+		this.auktionStart = auktionStart;
 	}
 
 	@Override
