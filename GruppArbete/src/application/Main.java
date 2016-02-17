@@ -20,7 +20,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			System.out.println("Hej");
+			new ProcessaEpost().startTask();
 			location = this.getClass().getResource("Login.fxml");
 			loader = new FXMLLoader(location);
 			root = loader.load();
