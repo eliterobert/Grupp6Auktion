@@ -20,7 +20,6 @@ public class LeverantorLoginController implements Initializable {
 	Button loginButton;
 	@FXML
 	ComboBox<Levrantör> comboBox;
-
 	public static String test;
 	public static String test2;
 
@@ -29,7 +28,7 @@ public class LeverantorLoginController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		loginButton.setOnAction(e -> {
+		loginButton.setOnAction(e-> {
 			test = comboBox.getValue().leveransörId;
 			test2 = comboBox.getValue().namn;
 			Main.stage1.close();

@@ -9,6 +9,4 @@ public class Auktionhistorik {
 	Date slut;
 	int slutpris;
 	int vinnandebudId;
-	
-
 }

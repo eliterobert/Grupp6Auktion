@@ -8,7 +8,4 @@ public class Bud {
 	String kundId;
 	int auktionsId;
 	int belopp;
-	
-	
-
 }

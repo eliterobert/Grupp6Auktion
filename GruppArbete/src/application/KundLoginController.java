@@ -22,14 +22,13 @@ public class KundLoginController implements Initializable {
 	PasswordField passwordField;
 	@FXML
 	ComboBox<Kund> comboBox;
-	
-	ArrayList<Kund> kundList = new ArrayList<>();
+
+	private ArrayList<Kund> kundList;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		kundList = new ArrayList<>();
 		PreparedStatement preparedStatement = null;
-
 		try {
 			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT * FROM kund");
 			ResultSet rs = preparedStatement.executeQuery();

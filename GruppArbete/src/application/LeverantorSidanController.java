@@ -28,15 +28,14 @@ public class LeverantorSidanController implements Initializable {
 	TableColumn<Historik, String> auktionCol;
 	@FXML
 	TableColumn<Historik, String> slutCol;
-
-	LinkedList<Historik> levList = new LinkedList<>();
+	private LinkedList<Historik> levList;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		levList = new LinkedList<>();
 		try {
 			PreparedStatement prep = Model.MODEL.getConnection().prepareStatement(
-					"select leverantör.namn as 'Leverantör', produkt.beskrivning as 'Produkt', auktion.auktionId, auktion.slut as 'Slut Tid' from leverantör inner join produkt on produkt.leverantörId = leverantör.leverantörId inner join auktion on auktion.produktId = produkt.produktId where leverantör.namn = ? group by auktion.produktId");
+					"select leverantör.namn as 'Leverantör', produkt.beskrivning as 'Produkt', auktioner.auktionId, auktioner.slut as 'Slut Tid' from leverantör inner join produkt on produkt.leverantörId = leverantör.leverantörId inner join auktioner on auktioner.produktId = produkt.produktId where leverantör.namn = ? group by auktioner.produktId");
 			prep.setString(1, LeverantorLoginController.test2);
 			ResultSet rs = prep.executeQuery();
 			while (rs.next()) {
@@ -48,13 +47,10 @@ public class LeverantorSidanController implements Initializable {
 			auktionCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("auktionsId"));
 			slutCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("auktionSlut"));
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-		// tableView.getItems().setAll(col)
 		button.setOnAction(e -> {
-			 Model.MODEL.main.logIn("RegistreraProdukt", 400, 225);
+			Model.MODEL.main.logIn("RegistreraProdukt", 400, 225);
 		});
 	}
 
