@@ -5,7 +5,7 @@ use auktion;
 create table if not exists kund(
         personnummer char(12) not null,
         efternamn nvarchar(30) not null,
-        fÃ¶rnamn nvarchar(30) not null,
+        förnamn nvarchar(30) not null,
         gatuadress varchar(50) not null,
         postnummer char(5) not null,
         ort varchar(30) not null,
@@ -22,17 +22,17 @@ create table kategori(
         primary key (kategoriId)
 );
 
-drop table if exists leverantÃ¶r;
-create table leverantÃ¶r(
-    leverantÃ¶rId int auto_increment not null,
+drop table if exists leverantör;
+create table leverantör(
+    leverantörId int auto_increment not null,
     namn varchar(30),
     epost varchar(100),
     telefon varchar(30),
     gatuadress varchar(50),
     postnummer char(5),
     ort varchar(30),
-    provisionsnivÃ¥ float(3),
-    primary key (leverantÃ¶rId)
+    provisionsnivå float(3),
+    primary key (leverantörId)
 );
 
 drop table if exists produkt;
@@ -40,17 +40,17 @@ create table produkt(
     produktId int not null AUTO_INCREMENT,
     namn varchar(50) not null,
     beskrivning VARCHAR(150),
-    utgÃ¥ngspris int,
+    utgångspris int,
     kategoriId int,
-    leverantÃ¶rId int,
+    leverantörId int,
     primary key (produktId),
     foreign key (kategoriId) references kategori(kategoriId) on delete no action,
-    foreign key (leverantÃ¶rId) references leverantÃ¶r(leverantÃ¶rId) on delete no action 
+    foreign key (leverantörId) references leverantör(leverantörId) on delete no action 
 );
 CREATE INDEX ixproduktNamn ON produkt(namn); 
 
-drop table if exists auktion;
-create table if not exists auktion(
+drop table if exists auktioner;
+create table if not exists auktioner(
     auktionId int not null auto_increment,
     produktId int,
     acceptpris int,
@@ -84,8 +84,9 @@ create table auktionhistorik(
 drop table if exists epost;
 create table epost(
 	epostId int not null auto_increment,
-    mottagare varchar(30) not null default 'galnagunnar@hotmail.com',
-    innehÃ¥ll longtext not null,
-    `status` enum('kÃ¶ad','skickad') default 'kÃ¶ad',
+    mottagare varchar(30) not null default 'gunnarenterprises@gmail.com',
+    ämne varchar(100),
+    innehåll nvarchar(500),
+    `status` enum('köat','skickat') default 'köat',
     primary key (epostId)
 );
