@@ -43,6 +43,10 @@ public class KundLoginController implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		loginButton.setOnAction(e-> {
+			Model.MODEL.main.logIn("kundsida", 400, 400);
+		});
 
 	}
 

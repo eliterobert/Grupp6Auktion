@@ -4,11 +4,15 @@ import java.sql.Date;
 
 public class Auktion {
 
-	int auktionId;
-	int produktId;
+	String auktionId;
+	String produktId;
 	int acceptpris;
 	Date start;
 	Date slut;
 	int slutpris;
+	@Override
+	public String toString() {
+		return produktId;
+	}
 	
 }

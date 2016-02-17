@@ -17,7 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class LeverantorSidanController implements Initializable {
 
 	@FXML
-	Button button;
+	Button button, button2;
 	@FXML
 	TableView<Historik> tableVie;
 	@FXML
@@ -52,6 +52,11 @@ public class LeverantorSidanController implements Initializable {
 		button.setOnAction(e -> {
 			Model.MODEL.main.logIn("RegistreraProdukt", 400, 225);
 		});
+		button2.setOnAction(e -> {
+			Model.MODEL.main.logIn("RegistreraAuktion", 430, 370);
+		});
+		
+		
 	}
 
 }

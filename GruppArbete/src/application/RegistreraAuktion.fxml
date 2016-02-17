@@ -6,17 +6,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistreraLeverantor">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistreraAuktionController">
    <children>
       <Label layoutX="86.0" layoutY="28.0" text="Lägg till Auktion">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <TextField fx:id="produktnamnTF" layoutX="31.0" layoutY="106.0" promptText="Produktnamn" />
-      <TextField fx:id="acceptprisTF" layoutX="208.0" layoutY="106.0" promptText="Acceptpris" />
+      <TextField fx:id="acceptprisTF" layoutX="210.0" layoutY="106.0" promptText="Acceptpris" />
       <Button fx:id="button" layoutX="166.0" layoutY="252.0" mnemonicParsing="false" text="Registrera" />
-      <DatePicker fx:id="startdatumDP" layoutX="19.0" layoutY="161.0" promptText="Startdatum" />
-      <DatePicker fx:id="slutdatumDP" layoutX="196.0" layoutY="161.0" promptText="Slutdatum" />
+      <DatePicker fx:id="startdatumDP" layoutX="19.0" layoutY="152.0" promptText="Startdatum" />
+      <DatePicker fx:id="slutdatumDP" layoutX="203.0" layoutY="152.0" promptText="Slutdatum" />
+      <ComboBox fx:id="startBox" layoutX="31.0" layoutY="202.0" prefWidth="150.0" promptText="Starttid" />
+      <ComboBox fx:id="slutBox" layoutX="208.0" layoutY="202.0" prefWidth="150.0" promptText="Sluttid" />
+      <ComboBox fx:id="produktBox" layoutX="32.0" layoutY="106.0" prefWidth="150.0" promptText="Produkt" />
    </children>
 </AnchorPane>

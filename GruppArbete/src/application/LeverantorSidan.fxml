@@ -23,6 +23,6 @@
       </TableView>
       <Label layoutX="325.0" layoutY="185.0" text="Dina Auktioner" />
       <Button fx:id="button" layoutX="103.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Produkt" />
-      <Button layoutX="524.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Auktion" />
+      <Button fx:id="button2" layoutX="524.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Auktion" />
    </children>
 </AnchorPane>
