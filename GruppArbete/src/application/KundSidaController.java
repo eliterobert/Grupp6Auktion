@@ -14,46 +14,40 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class KundSidaController  implements Initializable{
-	
-	
-	
-	@FXML 
+public class KundSidaController implements Initializable {
+
+	@FXML
 	Button button;
 	@FXML
 	TableView<Historik> tableVie;
 	@FXML
-	TableColumn <Historik , String> namnCol;
+	TableColumn<Historik, String> namnCol;
 	@FXML
-	TableColumn <Historik , String> beskrivningCol;
+	TableColumn<Historik, String> beskrivningCol;
 	@FXML
-	TableColumn <Historik, String> auktionCol;
+	TableColumn<Historik, String> slutCol;
 	@FXML
-	TableColumn <Historik, String> startCol;
-	@FXML 
-	TableColumn <Historik , String> slutCol;
-    private LinkedList <Historik> levList;
-    
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    	levList = new LinkedList<>();
-    try{
-    	PreparedStatement prep =  Model.MODEL.getConnection().prepareStatement("select produkt.beskrivning , produkt.namn , bud.belopp , auktion.`start` , auktion.slut from bud inner join auktion on bud.auktionId = auktion.auktionId inner join produkt on auktion.auktionId = produkt.produktId");
-    	ResultSet rs = prep.executeQuery();
-    	while(rs.next()){
-    		levList.add(new Historik(rs.getString(2),rs.getString(1),rs.getString(4) ,rs.getString(3), rs.getString(5)));
-    	}
-    	tableVie.getItems().setAll(levList);
-    	namnCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("namn"));
-    	beskrivningCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("beskrivingin"));
-    	auktionCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("belopp"));
-    	startCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("auktionStart"));
-    	slutCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("auktionSlut"));
-    }catch(SQLException e){
-    	e.printStackTrace();
-    }
-    button.setOnAction(e-> {
-    
-    });
-    	
-    }
+	TableColumn<Historik, String> beloppCol;
+
+	private LinkedList<Historik> levList;
+
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		levList = new LinkedList<>();
+		try {
+			PreparedStatement prep = Model.MODEL.getConnection().prepareStatement(
+					"select produkt.beskrivning,produkt.namn,bud.belopp,auktioner.slut from bud inner join auktioner on bud.auktionId = auktioner.auktionId inner join produkt on auktioner.auktionId = produkt.produktId group by produkt.produktId");
+			ResultSet rs = prep.executeQuery();
+			while (rs.next()) {
+				levList.add(new Historik(rs.getString("produkt.namn"), rs.getString("produkt.beskrivning"),
+						rs.getString("auktioner.slut"), rs.getString("bud.belopp")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		tableVie.getItems().setAll(levList);
+		System.out.println(levList);
+		namnCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("namn"));
+		beskrivningCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("beskrivning"));
+		slutCol.setCellValueFactory(new PropertyValueFactory<Historik, String>("auktionSlut"));
+	}
 }

@@ -1,15 +1,14 @@
 package application;
 
 public class Historik {
-
+	
+	String auktionStart;
 	String namn;
 	String beskrivning;
 	String auktionsId;
 	String auktionSlut;
 	String belopp;
-	String auktionStart;
 	
-
 	public String getNamn() {
 		return namn;
 	}
@@ -49,9 +48,6 @@ public class Historik {
 		this.auktionsId = auktionsId;
 		this.auktionSlut = auktionSlut;
 	}
-	
-
-	
 
 	public Historik(String namn, String beskrivning, String auktionSlut, String belopp, String auktionStart) {
 		super();
@@ -64,8 +60,8 @@ public class Historik {
 
 	@Override
 	public String toString() {
-		return "LeverantorsHistorik [namn=" + namn + ", beskrivning=" + beskrivning + ", auktionsId=" + auktionsId
-				+ ", auktionSlut=" + auktionSlut + "]";
+		return "Historik [namn=" + namn + ", beskrivning=" + beskrivning + ", auktionSlut=" + auktionSlut + ", belopp="
+				+ belopp + ", auktionStart=" + auktionStart + "]";
 	}
 
 }
