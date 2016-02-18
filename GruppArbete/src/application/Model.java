@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public enum Model {
 	MODEL;
-	Main main = new Main();
+	private Main main = new Main();
 	public static Connection connection;
 
-	Connection getConnection() {
+	public Connection getConnection() {
 		try {
 			String url = "jdbc:mysql://auktion.clgxeckvrykx.eu-central-1.rds.amazonaws.com:3306/";
 			String userName = "root";
@@ -29,5 +29,13 @@ public enum Model {
 			System.out.println("not connected");
 		}
 		return null;
+	}
+
+	public Main getMain() {
+		return main;
+	}
+
+	public void setMain(Main main) {
+		this.main = main;
 	}
 }

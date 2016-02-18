@@ -1,4 +1,4 @@
-package application;
+package controllers;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
+import application.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import tables.Historik;
 
 public class LeverantorSidanController implements Initializable {
 
@@ -50,10 +52,10 @@ public class LeverantorSidanController implements Initializable {
 			e1.printStackTrace();
 		}
 		button.setOnAction(e -> {
-			Model.MODEL.main.logIn("RegistreraProdukt", 400, 225);
+			Model.MODEL.getMain().logIn("RegistreraProdukt", 260, 420);
 		});
 		button2.setOnAction(e -> {
-			Model.MODEL.main.logIn("RegistreraAuktion", 430, 370);
+			Model.MODEL.getMain().logIn("RegistreraAuktion", 370, 400);
 		});
 		
 		

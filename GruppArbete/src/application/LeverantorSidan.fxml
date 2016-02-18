@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LeverantorSidanController">
+<AnchorPane prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LeverantorSidanController">
    <children>
       <Label layoutX="297.0" layoutY="40.0" text="Leverantör">
          <font>

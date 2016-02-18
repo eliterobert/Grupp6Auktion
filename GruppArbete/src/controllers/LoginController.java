@@ -1,8 +1,9 @@
-package application;
+package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,16 +19,16 @@ public class LoginController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		kundLoginButton.setOnAction(e -> {
-			main.logIn("UserLogin", 270, 150);
+			main.logIn("UserLogin", 250, 350);
 		});
 		leverantorLoginButton.setOnAction(e -> {
-			main.logIn("LeverantorLogin", 270, 150);
+			main.logIn("LeverantorLogin", 250, 350);
 		});
 		registreraLevButton.setOnAction(e -> {
-			main.logIn("RegistreraLeverantor", 400, 300);
+			main.logIn("RegistreraLeverantor", 400, 420);
 		});
 		registreraKundButton.setOnAction(e -> {
-			main.logIn("RegistreraKund", 400, 350);
+			main.logIn("RegistreraKund", 400, 420);
 
 		});
 

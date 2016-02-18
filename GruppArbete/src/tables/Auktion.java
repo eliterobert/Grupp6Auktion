@@ -1,4 +1,4 @@
-package application;
+package tables;
 
 import java.sql.Date;
 

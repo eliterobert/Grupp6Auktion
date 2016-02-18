@@ -4,21 +4,24 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="611.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KundSidaController">
+<AnchorPane prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.KundSidaController">
    <children>
-      <Button fx:id="button" layoutX="222.0" layoutY="472.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="149.0" text="Lägg bud" />
-      <Label layoutX="247.0" layoutY="29.0" prefHeight="45.0" prefWidth="77.0" text="Kund">
+      <Label layoutX="302.0" layoutY="42.0" text="Auktioner">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold Italic" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="243.0" layoutY="189.0" text="Dina bud" />
-      <TableView fx:id="tableVie" layoutX="58.0" layoutY="221.0" prefHeight="209.0" prefWidth="482.0">
+      <Label layoutX="325.0" layoutY="185.0" text="Dina Auktioner" />
+      <Button fx:id="button" layoutX="332.0" layoutY="138.0" mnemonicParsing="false" text="Lägg Bud" />
+      <TableView fx:id="tableVie" layoutX="47.0" layoutY="208.0" prefHeight="335.0" prefWidth="635.0">
         <columns>
-          <TableColumn fx:id="namnCol" prefWidth="75.0" text="Namn" />
-          <TableColumn fx:id="beskrivningCol" prefWidth="91.0" text="Beskrivning" />
-            <TableColumn fx:id="slutCol" prefWidth="83.0" text="Belopp" />
+          <TableColumn fx:id="auktionCol" prefWidth="66.0" text="NR" />
+          <TableColumn fx:id="namnCol" prefWidth="107.0" text="Produkt" />
+            <TableColumn fx:id="beskrivningCol" prefWidth="200.0" text="Beskrivning" />
+            <TableColumn fx:id="budCol" prefWidth="87.0" text="Ledande Bud" />
+            <TableColumn fx:id="fornamnCol" prefWidth="171.0" text="Budgivare" />
         </columns>
       </TableView>
    </children>

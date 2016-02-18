@@ -1,14 +1,14 @@
-package application;
+package tables;
 
 public class Historik {
-	
+
 	String auktionStart;
 	String namn;
 	String beskrivning;
 	String auktionsId;
 	String auktionSlut;
 	String belopp;
-	
+
 	public String getNamn() {
 		return namn;
 	}

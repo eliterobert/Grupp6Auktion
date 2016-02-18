@@ -1,4 +1,4 @@
-package application;
+package controllers;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -7,12 +7,17 @@ import java.sql.SQLException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import application.Main;
+import application.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import tables.Auktion;
+import tables.Produkt;
 
 public class RegistreraAuktionController implements Initializable {
 
@@ -44,9 +49,9 @@ public class RegistreraAuktionController implements Initializable {
 			rs = prep.executeQuery();
 			while (rs.next()) {
 				Produkt p = new Produkt();
-				p.produktId = rs.getString(1);
-				p.namn = rs.getString(2);
-				p.leveranstrId = rs.getString(3);
+				p.setProduktId(rs.getString(1));
+				p.setNamn(rs.getString(2));
+				p.setLeveranstrId(rs.getString(3));
 				produktList.add(p);
 				produktBox.getItems().add(p);
 			}
@@ -58,7 +63,7 @@ public class RegistreraAuktionController implements Initializable {
 			try {
 				PreparedStatement pstm = Model.MODEL.getConnection().prepareStatement(
 						"INSERT INTO auktioner (ProduktId, acceptpris,`start`,slut) VALUES (?,?,?,?)");
-				pstm.setString(1, produktBox.getValue().produktId);
+				pstm.setString(1, produktBox.getValue().getProduktId());
 				pstm.setString(2, acceptprisTF.getText());
 				pstm.setString(3, startdatumDP.getValue() + " " + startBox.getValue());
 				pstm.setString(4, slutdatumDP.getValue() + " " + slutBox.getValue());
@@ -67,6 +72,7 @@ public class RegistreraAuktionController implements Initializable {
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
+			Main.stage1.close();
 		});
 
 	}

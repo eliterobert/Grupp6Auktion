@@ -16,19 +16,24 @@ public class Main extends Application {
 	Parent root;
 	Scene scene, gameScene;
 	public static Stage startStage, stage1, stage2;
+	private ProcessaEpost processaEpost;
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			new ProcessaEpost().startTask();
+			processaEpost = new ProcessaEpost();
+			processaEpost.startTask();
 			location = this.getClass().getResource("Login.fxml");
 			loader = new FXMLLoader(location);
 			root = loader.load();
-			scene = new Scene(root, 400, 200);
+			scene = new Scene(root, 430, 230);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			startStage = primaryStage;
 			startStage.setScene(scene);
 			startStage.show();
+			startStage.setOnCloseRequest(e -> {
+				processaEpost.cancel();
+			});
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,6 +47,10 @@ public class Main extends Application {
 			root = loader.load();
 			scene = new Scene(root, height, width);
 			stage1.setScene(scene);
+			stage1.setMaxHeight(height);
+			stage1.setMaxWidth(width);
+			stage1.setMinHeight(height);
+			stage1.setMinWidth(width);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage1.show();
 		} catch (IOException e) {
