@@ -30,6 +30,14 @@ public class RegistreraProduktController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		button.setDisable(true);
+		comboBox.setOnAction(e -> {
+			if (namnField.getText() == "" && utgangField.getText() == "" && beskrivningField.getText() == "") {
+				button.setDisable(true);
+			} else {
+				button.setDisable(false);
+			}
+		});
 		try (Statement stm = Model.MODEL.getConnection().createStatement()) {
 			ResultSet rs = stm.executeQuery("SELECT * FROM kategori");
 			while (rs.next()) {

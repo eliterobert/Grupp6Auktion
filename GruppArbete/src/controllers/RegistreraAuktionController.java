@@ -22,7 +22,7 @@ import tables.Produkt;
 public class RegistreraAuktionController implements Initializable {
 
 	@FXML
-	TextField produktnamnTF, acceptprisTF;
+	TextField acceptprisTF;
 	@FXML
 	Button button;
 	@FXML
@@ -40,6 +40,17 @@ public class RegistreraAuktionController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		button.setDisable(true);
+
+		produktBox.setOnAction(e -> {
+			slutBox.setOnAction(ea -> {
+				if (acceptprisTF.getText() != null && startdatumDP.getValue() != null
+						&& slutdatumDP.getValue() != null) {
+					button.setDisable(false);
+				}
+			});
+		});
+
 		ResultSet rs = null;
 		setTimesComboB();
 		try {

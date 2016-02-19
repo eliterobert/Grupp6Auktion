@@ -31,7 +31,13 @@ public class KundLoginController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		kundList = new ArrayList<>();
+		loginButton.setDisable(true);
+
+		comboBox.setOnAction(e -> {
+			loginButton.setDisable(false);
+		});
+
+		setKundList(new ArrayList<>());
 
 		try (Statement stm = Model.MODEL.getConnection().createStatement()) {
 			ResultSet rs = stm.executeQuery("SELECT * FROM kund");
@@ -50,6 +56,14 @@ public class KundLoginController implements Initializable {
 			Model.MODEL.getMain().logIn("KundSida", 670, 730);
 		});
 
+	}
+
+	public ArrayList<Kund> getKundList() {
+		return kundList;
+	}
+
+	public void setKundList(ArrayList<Kund> kundList) {
+		this.kundList = kundList;
 	}
 
 }

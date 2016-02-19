@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,9 +8,11 @@
 
 <AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LeverantorLoginController">
    <children>
-      <ComboBox fx:id="comboBox" layoutX="21.0" layoutY="69.0" prefWidth="150.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" layoutX="21.0" layoutY="115.0" promptText="Password" />
-      <Button fx:id="loginButton" layoutX="212.0" layoutY="115.0" mnemonicParsing="false" text="Login" />
-      <Label layoutX="117.0" layoutY="28.0" text="Leverantör" />
+      <ComboBox fx:id="comboBox" layoutX="26.0" layoutY="76.0" prefWidth="150.0" promptText="Username" />
+      <Button fx:id="loginButton" layoutX="215.0" layoutY="140.0" mnemonicParsing="false" text="Visa" />
+      <Label layoutX="86.0" layoutY="26.0" text="Välj Leverantör">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
    </children>
 </AnchorPane>

@@ -21,6 +21,10 @@ public class RegistreraLeverantorController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		button.setDisable(true);
+		ortField.setOnMouseClicked(e -> {
+			button.setDisable(false);
+		});
 		button.setOnAction(e -> {
 			try {
 				PreparedStatement pS = Model.MODEL.getConnection().prepareStatement(

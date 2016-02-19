@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StartSidaController">
    <children>
       <Label layoutX="135.0" layoutY="14.0" text="NackAuktion">
          <font>
-            <Font size="23.0" />
+            <Font name="System Bold Italic" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="kundLoginButton" layoutX="57.0" layoutY="74.0" mnemonicParsing="false" text="Logga inKund" />
+      <Button fx:id="kundLoginButton" layoutX="57.0" layoutY="74.0" mnemonicParsing="false" text="Logga in Kund" />
       <Button fx:id="leverantorLoginButton" layoutX="254.0" layoutY="74.0" mnemonicParsing="false" text="Administrera" />
       <Button fx:id="registreraKundButton" layoutX="46.0" layoutY="149.0" mnemonicParsing="false" text="Registrera Kund" />
       <Button fx:id="registreraLevButton" layoutX="232.0" layoutY="149.0" mnemonicParsing="false" text="Registrera Leverantör" />

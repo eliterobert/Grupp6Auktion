@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class LoginController implements Initializable {
+public class StartSidaController implements Initializable {
 
 	@FXML
 	Button kundLoginButton, leverantorLoginButton, registreraKundButton, registreraLevButton;
@@ -19,7 +19,7 @@ public class LoginController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		kundLoginButton.setOnAction(e -> {
-			main.logIn("UserLogin", 250, 350);
+			main.logIn("KundLogin", 250, 350);
 		});
 		leverantorLoginButton.setOnAction(e -> {
 			main.logIn("LeverantorLogin", 250, 350);

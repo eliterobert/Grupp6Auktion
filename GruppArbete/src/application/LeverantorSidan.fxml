@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,21 +9,89 @@
 
 <AnchorPane prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LeverantorSidanController">
    <children>
-      <Label layoutX="297.0" layoutY="40.0" text="Leverantör">
+      <Label layoutX="271.0" layoutY="43.0" text="ADMINISTRERA">
          <font>
             <Font name="System Bold Italic" size="27.0" />
          </font>
       </Label>
-      <TableView fx:id="tableVie" layoutX="43.0" layoutY="214.0" prefHeight="282.0" prefWidth="656.0" style="-fx-background-color: orange;">
-        <columns>
-          <TableColumn fx:id="namnCol" prefWidth="139.0" text="Namn" />
-          <TableColumn fx:id="beskrivningCol" prefWidth="152.0" text="Beskrivning" />
-            <TableColumn fx:id="auktionCol" minWidth="8.0" prefWidth="65.0" text="AuktionId" />
-            <TableColumn fx:id="slutCol" minWidth="0.0" prefWidth="294.0" text="SlutTid" />
-        </columns>
-      </TableView>
-      <Label layoutX="325.0" layoutY="185.0" text="Dina Auktioner" />
-      <Button fx:id="button" layoutX="103.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Produkt" />
-      <Button fx:id="button2" layoutX="524.0" layoutY="119.0" mnemonicParsing="false" text="Lägg till Auktion" />
+      <TabPane prefHeight="564.0" prefWidth="731.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Auktioner">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableVie" layoutX="38.0" layoutY="122.0" prefHeight="399.0" prefWidth="656.0" style="-fx-background-color: orange;">
+                           <columns>
+                              <TableColumn fx:id="namnCol" prefWidth="139.0" text="Namn" />
+                              <TableColumn fx:id="beskrivningCol" prefWidth="152.0" text="Beskrivning" />
+                              <TableColumn fx:id="auktionCol" minWidth="8.0" prefWidth="65.0" text="AuktionId" />
+                              <TableColumn fx:id="slutCol" minWidth="0.0" prefWidth="294.0" text="SlutTid" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="button" layoutX="51.0" layoutY="61.0" mnemonicParsing="false" text="Lägg till Produkt" />
+                        <Button fx:id="button2" layoutX="558.0" layoutY="61.0" mnemonicParsing="false" text="Lägg till Auktion" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="leveCol" text="     Sålt    ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableView2" layoutX="38.0" layoutY="99.0" prefHeight="390.0" prefWidth="649.0">
+                          <columns>
+                            <TableColumn fx:id="leverantorCol" prefWidth="119.0" text="Leverantör" />
+                            <TableColumn fx:id="idCol" prefWidth="66.0" text="ID" />
+                              <TableColumn fx:id="produktNamnCol" prefWidth="191.0" text="Produktnamn" />
+                              <TableColumn fx:id="provisionCol" prefWidth="170.0" text="Provision" />
+                              <TableColumn fx:id="proviNivCol" prefWidth="100.0" text="Provisionsnivå" />
+                          </columns>
+                        </TableView>
+                        <DatePicker fx:id="startPicker" layoutX="50.0" layoutY="61.0" />
+                        <DatePicker fx:id="stopPicker" layoutX="322.0" layoutY="61.0" />
+                        <Button fx:id="visaButton" layoutX="596.0" layoutY="61.0" mnemonicParsing="false" text="Visa" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tab3" text="Kundlista">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableView3" layoutX="38.0" layoutY="99.0" prefHeight="420.0" prefWidth="649.0">
+                           <columns>
+                              <TableColumn fx:id="personnummerCol" prefWidth="119.0" text="Personnummer" />
+                              <TableColumn fx:id="efternamnetCol" prefWidth="129.0" text="Efternamn" />
+                              <TableColumn fx:id="fornamnetCol" prefWidth="181.0" text="Förnamn" />
+                              <TableColumn fx:id="totalVardeCol" prefWidth="218.0" text="Totalvärde" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="button4" layoutX="38.0" layoutY="51.0" mnemonicParsing="false" text="Visa Lista" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Månads Provision">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="210.0" layoutY="106.0" text="Totala provisionen den valda månaden">
+                           <font>
+                              <Font name="System Bold Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="provisionLabel" layoutX="212.0" layoutY="245.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="68.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="manadBox" layoutX="297.0" layoutY="73.0" prefWidth="150.0" />
+                        <Button fx:id="manadButton" layoutX="568.0" layoutY="73.0" mnemonicParsing="false" text="Visa" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

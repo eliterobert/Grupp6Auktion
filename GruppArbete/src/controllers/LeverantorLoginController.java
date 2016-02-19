@@ -4,6 +4,7 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -41,10 +42,8 @@ public class LeverantorLoginController implements Initializable {
 			Main.stage1.close();
 			Model.MODEL.getMain().logIn("LeverantorSidan", 620, 765);
 		});
-		PreparedStatement preparedStatement = null;
-		try {
-			preparedStatement = Model.MODEL.getConnection().prepareStatement("SELECT * FROM leverantör");
-			ResultSet rs = preparedStatement.executeQuery();
+		try (Statement stm = Model.MODEL.getConnection().createStatement()) {
+			ResultSet rs = stm.executeQuery("SELECT * FROM leverantör");
 			while (rs.next()) {
 				Levrantör lev = new Levrantör();
 				lev.setLeveransörId(rs.getString("leverantörId"));
@@ -54,8 +53,9 @@ public class LeverantorLoginController implements Initializable {
 				levLista.add(lev);
 				comboBox.getItems().add(lev);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 
 	}

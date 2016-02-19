@@ -23,7 +23,7 @@ public class Main extends Application {
 		try {
 			processaEpost = new ProcessaEpost();
 			processaEpost.startTask();
-			location = this.getClass().getResource("Login.fxml");
+			location = this.getClass().getResource("StartSida.fxml");
 			loader = new FXMLLoader(location);
 			root = loader.load();
 			scene = new Scene(root, 430, 230);
