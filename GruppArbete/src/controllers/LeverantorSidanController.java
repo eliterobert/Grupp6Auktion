@@ -111,6 +111,7 @@ public class LeverantorSidanController implements Initializable {
 		});
 
 		visaButton.setOnAction(e -> {
+			tableView2.getItems().clear();
 			try (CallableStatement callS = Model.MODEL.getConnection().prepareCall("{call auktionInomTid(?,?)}")) {
 				callS.setString(1, startPicker.getValue().toString());
 				callS.setString(2, stopPicker.getValue().toString());
@@ -161,7 +162,7 @@ public class LeverantorSidanController implements Initializable {
 
 		manadBox.getItems().addAll(Model.MODEL.adderaManader(manadList));
 		manadButton.setDisable(true);
-		manadBox.setOnAction(e-> {
+		manadBox.setOnAction(e -> {
 			manadButton.setDisable(false);
 		});
 		manadButton.setOnAction(e -> {
